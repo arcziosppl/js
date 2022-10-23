@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAL</title>
+    <link rel="stylesheet" href="/style/style.css">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js?ver=1.4.2"></script>
+</head>
+<body>
+    <header>
+        <div class="top">
+            <div class="error">
+                <p>Error</p>
+                <p>Maximum number of characters</p>
+                <p><button class="btn_error">OK</button></p>
+            </div>
+            <a href="https://github.com/arcziosppl"><img src="img/git.png" class="git_logo" alt="github-logo"></a>
+            <p class="title">The Calculator</p>
+        </div>
+    </header>
+
+    <main>
+        <div class="main">
+            <p class="result"></p>
+            <div class="keyboard">
+                <p>
+                    <button class="ce">CE</button>
+                    <button class="operation">+/-</button>
+                    <button class="operation" value="%">%</button>
+                    <button class="operation" value="/">/</button>
+                </p>
+
+                <p>
+                    <button class="number" value="7">7</button>
+                    <button class="number" value="8">8</button>
+                    <button class="number" value="9">9</button>
+                    <button class="operation" value="*">*</button>
+                </p>
+
+                <p>
+                    <button class="number" value="4">4</button>
+                    <button class="number" value="5">5</button>
+                    <button class="number" value="6">6</button>
+                    <button class="operation" value="-">-</button>
+                </p> 
+
+                <p>
+                    <button class="number" value="1">1</button>
+                    <button class="number" value="2">2</button>
+                    <button class="number" value="3">3</button>
+                    <button class="operation" value="+">+</button>
+                </p>
+
+                <p>
+                    <button class="number" id="zero" value="0">0</button>
+                    <button class="number" value=".">.</button>
+                    <button class="equal" value="=">=</button>
+                </p>
+            </div>
+        </div>
+        </main> 
+        
+        <script src="script/script.js" type="text/javascript"></script>
+</body>
+</html>
