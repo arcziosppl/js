@@ -100,6 +100,7 @@ get_data();
 
 <script>
 
+/*
 window.onload = ()=>{
 
 class paths_play{
@@ -164,7 +165,7 @@ play.forEach(el =>{
         let paths = path_split(play_song);
         insert(paths[0],paths[1],paths[2],paths[3]);
     });
-});
+}); 
 
 
 function insert(path1,path2,path3,path4)
@@ -182,7 +183,7 @@ function insert(path1,path2,path3,path4)
     });
 
   // let dur = audio.duration;
-    max.max = Math.round(audio.duration);
+    max.max = (audio.duration)*(audio.currentTime)/10;
     console.log(Math.round(audio.duration));
 
     btn_play.addEventListener("click", ()=>{
@@ -199,7 +200,7 @@ audio.pause()
 }
 
 
-}
+}*/
 </script>
 
 </body>

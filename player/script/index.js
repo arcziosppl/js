@@ -68,9 +68,71 @@ document.ready = ()=>{
                 height: "30px"
             });
         });
-
-
-    
-
         });
+
+
+        class paths_play{
+            path1; //img
+            path2; //file
+            path3; //sname
+            path4; //aname
+
+            getpaths(p1,p2,p3,p4)
+            {
+                this.path1 = p1;
+                this.path2 = p2;
+                this.path3 = p3;
+                this.path4 = p4;
+            }
+
+        };
+        
+        const player = new paths_play();
+        const audio = new Audio();
+        
+        const play = document.querySelectorAll(".track");
+        const btn_left = document.querySelector(".btn_left");
+        const btn_right = document.querySelector(".btn_right");
+        const btn_play = document.querySelector(".btn_play");
+        const btn_pause = document.querySelector(".btn_pause");
+        const vol = document.querySelector(".volume");
+        const start_val = document.querySelector(".start");
+        const end_val = document.querySelector(".end");
+        const seek = document.querySelector(".seek");
+        var max = document.querySelector(".seek");
+        
+        
+        function setCookie(cname, cvalue, exdays) {
+          const d = new Date();
+          d.setTime(d.getTime() + (exdays*24*60*60*1000));
+          let expires = "expires="+ d.toUTCString();
+          document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+        
+        function path_split(str)
+        {
+        return str.split("|");
+        }
+        
+    
+        play.forEach(el =>{
+            el.addEventListener("click", ()=>{
+                let play_song = el.value;
+                let paths = path_split(play_song);
+                player.getpaths(paths[0],paths[1],paths[2],paths[3]);
+
+                document.querySelector(".current_img").innerHTML = '<img class="img" src="script/uploads/' + player.path1 + '">';
+                audio.src = "/player/script/uploads/" + player.path2;
+                document.querySelector(".current_sname").innerHTML = player.path3;
+                document.querySelector(".current_aname").innerHTML = player.path4;
+            });
+        }); 
+        
+        btn_play.addEventListener("click", ()=>{
+            audio.play();
+        });
+        btn_pause.addEventListener("click", ()=>{
+            audio.pause();
+        });
+     
 }
