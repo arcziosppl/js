@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add track</title>
+    <link rel="stylesheet" href="/player/style/addtrack.css">
+    <link rel="stylesheet" href="/style/addtrack.css">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js?ver=1.4.2"></script>
+</head>
+<body>
+    <header>
+        <div class="top">
+            <a href="/player/index.php" class="return">HOME</a>
+            <p>ADD TRACK</p>
+        </div>
+    </header>
+
+    <main>
+        <div class="track">
+            <form action="/player/script/addtrack.php" method="post" enctype="multipart/form-data">
+            Song image: <input type="file" class="file" accept="image/jpeg, image/png" name="file1">
+            <br>
+            Song file: <input type="file" class="file" accept="song/mp3, song/mp4" name="file2">
+            <br>
+             Song name: <input type="text" class="song_name" name="songname">
+             <br>
+             Author name: <input type="text" class="author_name" name="authorname">
+             <br>
+             <input type="submit" class="submit_song" value="SUBMIT">
+        </form>
+        </div>
+    </main>
+
+
+    <script src="/script/addtrack.js"></script>
+    <script src="/player/script/addtrack.js"></script>
+</body>
+</html>
