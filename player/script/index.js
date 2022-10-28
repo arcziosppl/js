@@ -70,7 +70,7 @@ document.ready = ()=>{
         });
         });
 
-
+ 
         class paths_play{
             path1; //img
             path2; //file
@@ -102,6 +102,32 @@ document.ready = ()=>{
             {
                 seek.value = s;
                 console.log(s);
+            }
+
+            updatestrat_value(val)
+            {
+                console.log(Math.round(val));
+                let val_str = (Math.round(val)).toString();
+                start_val.innerHTML = val_str.slice(0,1) + ":" + val_str.slice(1,3);
+               
+
+            }
+
+            updateend_value(val)
+            {
+                let val_str = (Math.round(val)).toString();
+                end_val.innerHTML = val_str.slice(0,1) + ":" + val_str.slice(1,3);
+            }
+
+            setseek()
+            {
+                let seek_val = seek.value;
+                console.log("seek: " + seek_val);
+
+                seek.addEventListener("click", ()=>{
+                    audio.currentTime = seek.value;
+                    this.updatestrat_value(seek_val);
+                });
             }
 
            
@@ -146,8 +172,14 @@ document.ready = ()=>{
                 document.querySelector(".current_sname").innerHTML = player.path3;
                 document.querySelector(".current_aname").innerHTML = player.path4;
                 setInterval(()=>{
-                    player.update_seek(audio.currentTime);
-                },500);
+                    player.update_seek(Math.round(audio.currentTime));
+                },1000);                
+                    audio.addEventListener("timeupdate", ()=>{
+                        player.updatestrat_value(audio.currentTime);
+                    player.updateend_value(audio.duration);
+                    max.max = Math.round(audio.duration);
+                    player.setseek();
+                    });
             });
         }); 
         

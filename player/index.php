@@ -48,7 +48,7 @@ get_data();
             <input type="range" class="volume" max="1" min="0" value="1" step="0.1">
             </div>
         </div>
-    <p class="current_seek"><a class="start">0:00</a><input type="range" class="seek" min="0" step="1" max="222" value="0"><a class="end">2:22</a></p>
+    <p class="current_seek"><a class="start">0:00</a><input type="range" class="seek" min="0" step="1"  value="0"><a class="end"></a></p>
     <p class="song"></p>
         </div>
         
