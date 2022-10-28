@@ -76,6 +76,7 @@ document.ready = ()=>{
             path2; //file
             path3; //sname
             path4; //aname
+            audio_volume;
 
             getpaths(p1,p2,p3,p4)
             {
@@ -84,7 +85,26 @@ document.ready = ()=>{
                 this.path3 = p3;
                 this.path4 = p4;
             }
+            getaudiovolume(vol)
+            {
+                this.audio_volume = vol;
+            }
 
+            current_time()
+            {
+                setInterval( ()=>{
+                let date = new Date();
+                time.innerHTML = date.getFullYear() + "-" + (date.getMonth()+1) + "-" + date.getDate();
+                },500);
+            }
+
+            update_seek(s)
+            {
+                seek.value = s;
+                console.log(s);
+            }
+
+           
         };
         
         const player = new paths_play();
@@ -99,6 +119,7 @@ document.ready = ()=>{
         const start_val = document.querySelector(".start");
         const end_val = document.querySelector(".end");
         const seek = document.querySelector(".seek");
+        const time = document.querySelector(".actual_time");
         var max = document.querySelector(".seek");
         
         
@@ -113,18 +134,20 @@ document.ready = ()=>{
         {
         return str.split("|");
         }
+
         
-    
         play.forEach(el =>{
             el.addEventListener("click", ()=>{
                 let play_song = el.value;
                 let paths = path_split(play_song);
                 player.getpaths(paths[0],paths[1],paths[2],paths[3]);
-
                 document.querySelector(".current_img").innerHTML = '<img class="img" src="script/uploads/' + player.path1 + '">';
                 audio.src = "/player/script/uploads/" + player.path2;
                 document.querySelector(".current_sname").innerHTML = player.path3;
                 document.querySelector(".current_aname").innerHTML = player.path4;
+                setInterval(()=>{
+                    player.update_seek(audio.currentTime);
+                },500);
             });
         }); 
         
@@ -134,5 +157,14 @@ document.ready = ()=>{
         btn_pause.addEventListener("click", ()=>{
             audio.pause();
         });
+        vol.addEventListener("click", ()=>{
+            audio.volume = vol.value;
+        });
+
      
+
+
+        //current time print
+        player.current_time();
+
 }
