@@ -1,0 +1,57 @@
+body{
+    background-color: rgba(211, 224, 255, 1);
+background-image: radial-gradient(circle, rgba(211, 224, 255, 1) 0%, rgba(123, 145, 210, 1) 100%);
+    margin: 0;
+    padding: 0;
+}
+
+.top{
+    text-align: center;
+    color: black;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 30px;
+}
+
+.c_boss{
+    font-size: 20px;
+    margin-top: -20px;
+}
+
+.c_name{
+    font-weight: bold;
+}
+
+.top a{
+    text-decoration: none;
+    color: black;
+    font-size: 25px;
+}
+
+.top a:hover{
+    border-bottom: 1px solid black;
+}
+
+.contact_data{
+    text-align: center;
+    margin-top: 100px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    border-bottom: 1px solid black;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+padding-bottom: 20px;
+}
+
+.s1{
+    font-weight: bold;
+}
+
+.map{
+    height: 400px;
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
