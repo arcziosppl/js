@@ -1,6 +1,5 @@
 body{
-    background-color: rgba(211, 224, 255, 1);
-background-image: radial-gradient(circle, rgba(211, 224, 255, 1) 0%, rgba(123, 145, 210, 1) 100%);
+    background-image: url(/images/cool-background.png);
     margin: 0;
     padding: 0;
 }
@@ -10,6 +9,14 @@ background-image: radial-gradient(circle, rgba(211, 224, 255, 1) 0%, rgba(123, 1
     color: black;
     font-family: 'Courier New', Courier, monospace;
     font-size: 30px;
+    background-color: rgba(255, 255, 255, 0.76);
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 0px 13px 0px rgba(66, 68, 90, 1);
+    -moz-box-shadow: 0px 0px 13px 0px rgba(66, 68, 90, 1);
+    box-shadow: 0px 0px 13px 0px rgba(66, 68, 90, 1);
 }
 
 .c_boss{
@@ -31,16 +38,23 @@ background-image: radial-gradient(circle, rgba(211, 224, 255, 1) 0%, rgba(123, 1
     border-bottom: 1px solid black;
 }
 
+.top a:active{
+    border-bottom: 1px solid black;
+}
+
 .contact_data{
     text-align: center;
     margin-top: 100px;
     font-family: 'Courier New', Courier, monospace;
     font-size: 20px;
-    border-bottom: 1px solid black;
     width: 50%;
     margin-left: auto;
     margin-right: auto;
 padding-bottom: 20px;
+border-radius: 10px;
+-webkit-box-shadow: 0px 0px 13px 0px rgba(66, 68, 90, 1);
+-moz-box-shadow: 0px 0px 13px 0px rgba(66, 68, 90, 1);
+box-shadow: 0px 0px 13px 0px rgba(66, 68, 90, 1);
 }
 
 .s1{
@@ -49,9 +63,37 @@ padding-bottom: 20px;
 
 .map{
     height: 400px;
-    width: 50%;
+    width: 90%;
     display: block;
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;
+    border-radius: 10px;
+}
+
+img{
+    width: 65%;
+    height: 40%;
+    border-radius: 10px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.main{
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 0px 13px 0px rgba(66, 68, 90, 1);
+    -moz-box-shadow: 0px 0px 13px 0px rgba(66, 68, 90, 1);
+    box-shadow: 0px 0px 13px 0px rgba(66, 68, 90, 1);
+    text-align: center;
+    margin-top: 30px;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.content{
+    text-align: justify;
+    border-top: 1px solid black;
+    padding: 20px;
+    font-size: 20px;
 }
