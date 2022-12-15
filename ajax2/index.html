@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grzyby</title>
+    <link rel="stylesheet" href="/style/index.css">
+</head>
+<body>
+    <header>
+        <h3 class="page_name">LOGIN PAGE</h3>
+    </header>
+    <main>
+        <div class="main">
+            <form action="/script/login.php" method="post">
+                <input type="mail" name="email" placeholder="E-mail" required><br><br>
+                <input type="password" name="pass" placeholder="Password" required><br><br>
+                <input type="submit" value="Login">
+                </form>
+        </div>
+    </main>
+
+
+
+
+    <script>
+const xhr = new XMLHttpRequest();
+xhr.open("POST", 'http://localhost:3000/script/login.php', true);
+xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+xhr.onreadystatechange = () => { 
+  if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+    console.log(JSON.parse(xhr.responseText));
+  }
+}
+xhr.send("foo=bar&lorem=ipsum");
+
+    </script>
+</body>
+</html>
