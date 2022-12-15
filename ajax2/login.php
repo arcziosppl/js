@@ -7,9 +7,17 @@ class grzyby{
 
 $grzybynew = new grzyby();
 
-if($_POST["foo"] == "bar")
+if($_POST["mail"] == "g@123.com" && $_POST["pass"] == "123")
 {
-    $grzybynew->succsess = "OK";
+    $grzybynew->success = "true";
+    $grzybynew->failed = "false";
+    $josn = json_encode($grzybynew);
+    echo $josn;
+}
+else
+{
+    $grzybynew->success = "false";
+    $grzybynew->failed = "true";
     $josn = json_encode($grzybynew);
     echo $josn;
 }

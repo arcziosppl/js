@@ -13,10 +13,10 @@
     </header>
     <main>
         <div class="main">
-            <form action="/script/login.php" method="post">
-                <input type="mail" name="email" placeholder="E-mail" required><br><br>
-                <input type="password" name="pass" placeholder="Password" required><br><br>
-                <input type="submit" value="Login">
+            <form>
+                <input type="mail" placeholder="E-mail" class="mail" required><br><br>
+                <input type="password" placeholder="Password" class="pass" required><br><br>
+                <input type="button" class="btn" value="Login">
                 </form>
         </div>
     </main>
@@ -25,6 +25,12 @@
 
 
     <script>
+
+const mail = document.querySelector('.mail');
+const pass = document.querySelector('.pass');
+const btn = document.querySelector('.btn');
+
+btn.addEventListener('click', ()=>{
 const xhr = new XMLHttpRequest();
 xhr.open("POST", 'http://localhost:3000/script/login.php', true);
 xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
@@ -34,8 +40,8 @@ xhr.onreadystatechange = () => {
     console.log(JSON.parse(xhr.responseText));
   }
 }
-xhr.send("foo=bar&lorem=ipsum");
-
+xhr.send("mail=" + mail.value + "&pass=" + pass.value);
+});
     </script>
 </body>
 </html>
